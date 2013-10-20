@@ -104,6 +104,12 @@ module.exports = function(grunt) {
         expand: true,
         src: ["fonts/*"],
         dest: 'dist/'
+      },
+      sites_def:{
+        expand: true,
+        src: ["sites_def/*"],
+        dest: 'dist/',
+        flatten: true
       }
     },
 
@@ -188,7 +194,9 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-css', ['recess']);
 
   // Fonts distribution task.
-  grunt.registerTask('dist-fonts', ['copy']);
+  grunt.registerTask('dist-fonts', ['copy:fonts']);
+
+  grunt.registerTask('dist-def', ['copy:sites_def']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
