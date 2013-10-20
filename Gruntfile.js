@@ -204,6 +204,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dist-def', ['copy:sites_def']);
 
+  grunt.registerTask('dist-telmedx', ['copy:telmedx']);
+
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js', 'copy:telmedx']);
 
