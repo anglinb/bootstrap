@@ -10,7 +10,7 @@
 
 <title>
   
-    Bootstrap
+    telmedx
   
 </title>
 
@@ -21,6 +21,21 @@
 		position:relative;
 		padding-top: 50px;
 	}
+</style>
+<style type="text/css">
+  /*To Be Added to override*/
+  /*.table-mid td{
+    vertical-align: middle;
+  }*/
+  .panel form {
+    padding: 8px;
+  }
+  .panel div.well{
+    margin: 8px;
+  }
+  .panel button{
+    margin: 8px;
+  }
 </style>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,10 +65,10 @@
     <!-- Place anything custom after this. -->
   </head>
   <body class="bs-docs-home">
-    <a class="sr-only" href="#content">Skip navigation</a>
+    
 
     <!-- Docs master nav -->
-    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -62,10 +77,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="./" class="navbar-brand"><img height="50px" src="logo.png"></a>
+      <a href="./" class="navbar-brand"><img height="40px" src="logo.png"></a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class=" nav navbar-nav">
+      <!--<ul class=" nav navbar-nav">
         <li>
           <a href="./getting-started">Getting started</a>
         </li>
@@ -82,10 +97,10 @@
           <a href="./customize">Customize</a>
         </li>
 	<li class="pull-right"><a href="#">Logout</a><li>
-      </ul>
+      </ul>-->
  <ul class="pull-right nav navbar-nav">
 
-	<li class="pull-right"><a href="#">Logout<span class="glyphicon glyphicon-search"></span></a><li>
+	<li class="pull-right"><a href="#">Logout&nbsp;<span class="glyphicon glyphicon-off"></span></a><li>
       </ul>
     </nav>
   </div>
@@ -95,34 +110,94 @@
     <!-- Page content of course! -->
 <main class="bs-masthead" id="content" role="main">
   <div class="container">
+    <h1></h1>
+  </div>
+<!--   <div class="container">
     <h1>Bootstrap</h1>
     <p class="lead">Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
     <p>
       <a href="#">hello</a>
     </p>
+  </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="panel panel-default" id="tables">
+          <div class="panel-heading"><h2>Patients</h2>
+          </div>
+          <table class="table table-hover table-mid">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>#</th>
+                <th><span class="glyphicon glyphicon-trash"></span></th>
+              </tr>
+              </thead>
+              <tbody id="patient-list">
+                <tr>
+                  <td>Michael Armstrong</td>
+                  <td>2421</td>
+                  <td><button class="btn btn-sm btn-danger del-patient"><span class="glyphicon glyphicon-trash"></span></button></td>
+                  
+                </tr>
+                <tr>
+                  <td>Donald Trump</td>
+                  <td>2983</td>
+                  <td><button class="btn btn-sm btn-danger del-patient"><span class="glyphicon glyphicon-trash"></span></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="col-xs-6">
+        <div class="panel panel-default" id="tables">
+          <div class="panel-heading"><h2>Add Patient</h2>
+          </div>
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">First and Last Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="First and Last Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Patient ID Number</label>
+              <input type="text" class="form-control" id="inputEmail" placeholder="Patient ID Number">
+            </div>
+<!--             <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div> -->
+            </form>
+              <div class="well">
+                <h4>Request Session Key </h4>
+                
+                <ul class="pagination">
+                  <li class="disabled"><a href="javascript:void(0);" id="ses-1">-</a></li>
+                  <li class="disabled"><a  href="javascript:void(0);" id="ses-2">-</a></li>
+                  <li class="disabled"><a href="javascript:void(0);" id="ses-3">-</a></li>
+                  <li class="disabled"><a href="javascript:void(0);" id="ses-4">-</a></li>
+                </ul>
+                  <br>
+                  <button id="get-sess" class="btn btn-primary">Get Session Key</button>
+              
+
+              </div>
+
+<!--             <div class="checkbox">
+              <label>
+                <input type="checkbox"> Check me out
+              </label>
+            </div> -->
+            <button id="add-patient-btn" style="width: 100%" class="btn btn-success">Add Patient</button>
+          
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
 
     <footer class="container" role="contentinfo">
-     
-
-      <div class="bs-social">
-  <!--<ul class="bs-social-buttons">
-    <li>
-      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
-    </li>
-    <li>
-      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
-    </li>
-    <li class="follow-btn">
-      <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
-    </li>
-    <li class="tweet-btn">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getbootstrap.com/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
-    </li>
-  </ul>-->
-</div>
 
 
       <!--<ul class="bs-masthead-links">
@@ -170,7 +245,40 @@
     s.parentNode.insertBefore(t, s);
   })();
 </script>-->
-
+<script type="text/javascript">
+  var sessionKeyString = "";
+  function resetsessionKey(){
+    for (var i = 1; i <= 4; i++) {
+        $("#ses-"+String(i)).html("-");
+      };
+  }
+  function clearAddForm(){
+    $("#inputEmail").val("");
+    $("#inputName").val("");
+  }
+  $(document).ready(function(){
+    $("#get-sess").click(function(){
+      sessionKeyString = "";
+      for (var i = 1; i <= 4; i++) {
+        var nextNumber = Math.floor((Math.random()*10));
+        $("#ses-"+String(i)).html(nextNumber);
+        sessionKeyString = sessionKeyString+String(nextNumber);
+      };
+      console.log(sessionKeyString);
+    });
+    $("#add-patient-btn").click(function(){
+      $("#patient-list").append('<tr><td>'+$("#inputName").val()+'<span data-rel="'+$("#inputEmail").val()+'"></td><td>'+sessionKeyString+'</td><td><button class="btn btn-sm btn-danger del-patient"><span class="glyphicon glyphicon-trash"></span></button></td></tr>');
+      resetsessionKey();
+      clearAddForm();
+    });
+    // $(".del-patient").click(function(){
+      $('#patient-list').on('click', '.del-patient', function() {
+      // console.log("hel");
+      // console.log($(this).parent().parent().html());
+      $(this).parent().parent().remove();
+    })
+  })
+</script>
 
   </body>
 <!---
