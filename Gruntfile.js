@@ -110,6 +110,12 @@ module.exports = function(grunt) {
         src: ["sites_def/*"],
         dest: 'dist/',
         flatten: true
+      },
+      telmedx:{
+        expand: true,
+        src: ["telmedx/*"],
+        dest: 'dist/',
+        flatten: true
       }
     },
 
@@ -199,7 +205,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-def', ['copy:sites_def']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js', 'copy:telmedx']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
