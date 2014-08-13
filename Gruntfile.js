@@ -114,7 +114,7 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: '../snapsale/snapsale/static/bjs/<%= pkg.name %>.min.js'
       },
       customize: {
         src: [
@@ -237,8 +237,8 @@ module.exports = function (grunt) {
       },
       core: {
         files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
-          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css'
+          '../snapsale/snapsale/static/bcss/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
+          '../snapsale/snapsale/static/bcss/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css'
         }
       },
       docs: {
@@ -287,7 +287,7 @@ module.exports = function (grunt) {
       fonts: {
         expand: true,
         src: 'fonts/*',
-        dest: 'dist/'
+        dest: '../snapsale/snapsale/static/'
       },
       docs: {
         expand: true,
@@ -445,6 +445,8 @@ module.exports = function (grunt) {
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'dist-js', 'dist-docs']);
+
+  grunt.registerTask('copyfont', ['copy:fonts']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
